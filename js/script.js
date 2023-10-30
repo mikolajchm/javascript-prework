@@ -14,7 +14,7 @@ console.log('Gracz wpisał: ' + playerInput);
 printMessage('Twój ruch to: ' + playerMove);
 
 // Wynik Gry
-if (playerMove !== 'nieznany ruch') {
+if (playerMove == 'nieznany ruch'){
     if (playerMove === computerMove) {
         printMessage('Remis');
     } else if ((playerMove === 'kamień' && computerMove === 'nożyce') ||
@@ -26,3 +26,4 @@ if (playerMove !== 'nieznany ruch') {
     }
 } else {
     printMessage('Nieprawidłowy wybór! Proszę wybrać 1, 2 lub 3.');
+}
