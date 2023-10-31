@@ -1,3 +1,29 @@
+function getMoveName(moveId) {
+    if (moveId === 1) {
+        return 'kamień';
+    } else if (moveId === 2) {
+        return 'papier';
+    } else if (moveId === 3) {
+        return 'nożyce';
+    } else {
+        return 'nieznany ruch';
+    }
+}
+
+function displayResult(playerMove, computerMove) {
+    printMessage('Zagrałem ' + computerMove + ', a Ty ' + playerMove);
+
+    if (playerMove === computerMove) {
+        printMessage('Remis');
+    } else if ((playerMove === 'kamień' && computerMove === 'nożyce') ||
+               (playerMove === 'papier' && computerMove === 'kamień') ||
+               (playerMove === 'nożyce' && computerMove === 'papier')) {
+        printMessage('Ty wygrywasz!');
+    } else {
+        printMessage('Przegrywasz!');
+    }
+}
+
 // Komputer
 let randomNumber = Math.floor(Math.random() * 3) + 1;
 let moves = ['kamień', 'papier', 'nożyce'];
