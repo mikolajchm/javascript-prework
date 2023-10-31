@@ -8,13 +8,14 @@ printMessage('Mój ruch to: ' + computerMove);
 
 // Gracz
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-let playerMove = moves[playerInput - 1] || 'nieznany ruch';
+let playerNumber = parseInt(playerInput); // Konwertuj do liczby
 
-console.log('Gracz wpisał: ' + playerInput);
-printMessage('Twój ruch to: ' + playerMove);
+if (playerNumber >= 1 && playerNumber <= 3) {
+    let playerMove = moves[playerNumber - 1];
+    console.log('Gracz wpisał: ' + playerInput);
+    printMessage('Twój ruch to: ' + playerMove);
 
-// Wynik Gry
-if (playerMove == 'nieznany ruch'){
+    // Wynik Gry
     if (playerMove === computerMove) {
         printMessage('Remis');
     } else if ((playerMove === 'kamień' && computerMove === 'nożyce') ||
@@ -25,5 +26,8 @@ if (playerMove == 'nieznany ruch'){
         printMessage('Przegrywasz!');
     }
 } else {
+    let playerMove = 'nieznany ruch';
+    console.log('Gracz wpisał: ' + playerInput);
+    printMessage('Twój ruch to: ' + playerMove);
     printMessage('Nieprawidłowy wybór! Proszę wybrać 1, 2 lub 3.');
 }
