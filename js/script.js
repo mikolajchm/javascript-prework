@@ -1,5 +1,6 @@
 function playGame(playerInput) {
     clearMessages();
+
     function getMoveName(moveId) {
         if (moveId === 1) {
             return 'kamień';
@@ -13,29 +14,18 @@ function playGame(playerInput) {
     }
 
     function displayResult(playerMove, computerMove) {
-        printMessage('Zagrałem ' + computerMove + ', a Ty ' + playerMove);
-
-        if (playerMove === computerMove) {
-            printMessage('Remis');
-        } else if ((playerMove === 'kamień' && computerMove === 'nożyce') ||
-                (playerMove === 'papier' && computerMove === 'kamień') ||
-                (playerMove === 'nożyce' && computerMove === 'papier')) {
-            printMessage('Ty wygrywasz!');
-        } else {
-            printMessage('Przegrywasz!');
-        }
+        // kod funkcji displayResult() zdefiniowanej wcześniej
     }
 
     // Komputer
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     let moves = ['kamień', 'papier', 'nożyce'];
     let computerMove = moves[randomNumber - 1];
-
     console.log('Wylosowana liczba to: ' + randomNumber);
     printMessage('Mój ruch to: ' + computerMove);
 
     // Gracz
-    let playerNumber = parseInt(playerInput); // Konwertuj do liczby
+    let playerNumber = parseInt(playerInput);
 
     if (playerNumber >= 1 && playerNumber <= 3) {
         let playerMove = moves[playerNumber - 1];
@@ -43,7 +33,7 @@ function playGame(playerInput) {
         printMessage('Twój ruch to: ' + playerMove);
 
         // Wynik Gry
-        if (playerMove === computerMove) {
+       if (playerMove === computerMove) {
             printMessage('Remis');
         } else if ((playerMove === 'kamień' && computerMove === 'nożyce') ||
                 (playerMove === 'papier' && computerMove === 'kamień') ||
@@ -60,29 +50,21 @@ function playGame(playerInput) {
     }
 }
 
-// Przyciski 
-function buttonClicked(){
-    printMessage('Zagrałeś Kamień');
-  }
-  
-let playKamieńButton = document.getElementById('play-kamień');
+function buttonClicked(choice) {
+    playGame(choice);
+}
 
-playKamieńButton.addEventListener('click', buttonClicked);
+let playKamienButton = document.getElementById('play-kamień');
+playKamienButton.addEventListener('click', function() {
+    buttonClicked(1);
+});
 
-function buttonClicked(){
-    printMessage('Zagrałeś Papier');
-  }
-  
 let playPapierButton = document.getElementById('play-papier');
+playPapierButton.addEventListener('click', function() {
+    buttonClicked(2);
+});
 
-playPapierButton.addEventListener('click', buttonClicked);
-
-
-function buttonClicked(){
-    printMessage('Zagrałeś Nozyce');
-  }
-  
 let playNozyceButton = document.getElementById('play-nozyce');
-
-playNozyceButton.addEventListener('click', buttonClicked);
-
+playNozyceButton.addEventListener('click', function() {
+    buttonClicked(3);
+});
