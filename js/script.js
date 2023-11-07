@@ -35,7 +35,6 @@ function playGame(playerInput) {
     printMessage('Mój ruch to: ' + computerMove);
 
     // Gracz
-    let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
     let playerNumber = parseInt(playerInput); // Konwertuj do liczby
 
     if (playerNumber >= 1 && playerNumber <= 3) {
