@@ -12,11 +12,7 @@ function playGame(playerInput) {
             return 'nieznany ruch';
         }
     }
-
-    function displayResult(playerMove, computerMove) {
-        // kod funkcji displayResult() zdefiniowanej wcześniej
-    }
-
+    
     // Komputer
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     let moves = ['kamień', 'papier', 'nożyce'];
