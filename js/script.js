@@ -55,17 +55,17 @@
         playGame(choice);
     }
 
-    let playKamienButton = document.getElementById('play-kamień');
+    const playKamienButton = document.getElementById('play-kamień');
     playKamienButton.addEventListener('click', function() {
         buttonClicked(1);
     });
 
-    let playPapierButton = document.getElementById('play-papier');
+    const playPapierButton = document.getElementById('play-papier');
     playPapierButton.addEventListener('click', function() {
         buttonClicked(2);
     });
 
-    let playNozyceButton = document.getElementById('play-nozyce');
+    const playNozyceButton = document.getElementById('play-nozyce');
     playNozyceButton.addEventListener('click', function() {
         buttonClicked(3);
     });
